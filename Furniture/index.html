@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dekoor - Furniture Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="why-choose-new.css">
+    <link rel="stylesheet" href="categories.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <style>
+        .hero-image {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            position: relative;
+            min-height: 500px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: background-image 0.5s ease;
+        }
+
+        .hero-image.image-loaded {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+            border-radius: 0 0 8px 8px;
+        }
+
+        @media (max-width: 768px) {
+    .hero-image {
+        min-height: 200px;      /* Turunkan tinggi minimal untuk mobile */
+        margin-bottom: 40px;    /* Beri jarak bawah supaya tidak nempel ke section berikutnya */
+    }
+
+    .why-choose-us {
+        padding-top: 60px;      /* Tambah padding atas supaya konten lebih nyaman */
+    }
+}
+
+        .product-card {
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+            color: var(--white);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            z-index: 2;
+        }
+
+        .product-price {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            background-color: rgba(255, 255, 255, 0.85);
+            color: var(--primary-color);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 4px;
+            text-shadow: none;
+        }
+
+        .product-name {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .btn-view {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 12px 25px;
+            font-weight: 600;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo-icon"></div>
+                <h1 class="logo-text">Dekoor</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">About us</a></li>
+                    <li class="dropdown">
+                        <a href="#">Furniture <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#">Living Room</a>
+                            <a href="#">Bedroom</a>
+                            <a href="#">Dining</a>
+                            <a href="#">Office</a>
+                        </div>
+                    </li>
+                    <li><a href="#">Partnerships</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <button class="btn btn-signup">Sign Up</button>
+                <button class="btn btn-cart"><i class="fas fa-shopping-bag"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">
+                        The kind of <br>
+                        <span class="accent">furniture</span> you have <br>
+                        been looking for
+                    </h2>
+                    <div class="hero-actions">
+                        <button class="btn btn-search"><i class="fas fa-search"></i> SEARCH CATALOG</button>
+                        <button class="btn btn-watch"><i class="fas fa-play-circle"></i> WATCH VIDEOS</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="product-card">
+                        <div class="product-price">$329</div>
+                        <h3 class="product-name">Pösht Sofa</h3>
+                        <button class="btn btn-view">VIEW DETAILS <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-choose-us">
+            <div class="container">
+                <h3 class="section-subtitle">WHY CHOOSE US?</h3>
+                <h2 class="section-title">We care about details and the quality of our products</h2>
+                
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="feature-text">
+                            MANUFACTURED WITH QUALITY MATERIALS
+                        </div>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon five">
+                            5
+                        </div>
+                        <div class="feature-text">
+                            5 YEARS OF WARRANTY FOR EACH PRODUCT
+                        </div>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="feature-text">
+                            20 YEARS OF EXPERTISE
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners">
+            <div class="container partners-container">
+                <div class="partners-count">
+                    <div class="count">25+</div>
+                    <div class="count-label">PARTNERED BRANDS</div>
+                </div>
+                
+                <div class="partner-logos">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRINd1hwVUnSTuglvTuKAN-l7T2weuAqcuMlvsVkHuuo16dsC83rRJN26qON7Pkt4Jby0o&usqp=CAU" alt="Gusto" class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Stripe" class="partner-logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyqFGgy0xK1rFQm4Q19dh9dzDeP_6Qzo9VXg&s" alt="Treehouse" class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Upwork-logo.svg" alt="Upwork" class="partner-logo">
+                </div>
+            </div>
+        </section>
+
+        <section class="categories">
+            <div class="container categories-container">
+                <div class="categories-images">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1567016432779-094069958ea5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="Living Room" class="category-image">
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1616137466211-f939a420be84?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="Home Office" class="category-image">
+                    </div>
+                    <div class="category-image-large">
+                        <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Media Console" class="category-image">
+                    </div>
+                </div>
+
+                <div class="categories-content">
+                    <h3 class="section-label">Categories</h3>
+                    <h2 class="categories-title">Furniture Sets Recommendations</h2>
+
+                    <div class="category-tabs">
+                        <div class="category-tab">Bedroom</div>
+                        
+                        <div class="category-tab active">
+                            Living Room
+                            <div class="category-description">
+                                Enjoy a great living room aesthetics with your family<br>
+                                Designs created for increased comfortability
+                            </div>
+                        </div>
+                        
+                        <div class="category-tab">Home Office</div>
+                        
+                        <div class="category-tab">Gaming Room</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-carousel">
+            <div class="container">
+                <div class="products-header">
+                    <div class="products-titles">
+                        <h3 class="product-subtitle">OUR PRODUCTS</h3>
+                        <h2 class="product-title">This month's best seller</h2>
+                    </div>
+                    <div class="products-action">
+                        <button class="btn-see-more">SEE MORE</button>
+                    </div>
+                </div>
+                
+                <div class="products-slider">
+                    <div class="product-item">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Green Sofa" class="product-image">
+                        <div class="product-price">$289</div>
+                        <h4 class="product-name">Green Sofa</h4>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="White Chair" class="product-image">
+                        <div class="product-price">$329</div>
+                        <h4 class="product-name">Und Chair</h4>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Orange Sofa" class="product-image">
+                        <div class="product-price">$419</div>
+                        <h4 class="product-name">Rust Sofa</h4>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Wooden Table" class="product-image">
+                        <div class="product-price">$249</div>
+                        <h4 class="product-name">Pine Table</h4>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Bookshelf" class="product-image">
+                        <div class="product-price">$379</div>
+                        <h4 class="product-name">Oak Shelf</h4>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Yellow Sofa" class="product-image">
+                        <div class="product-price">$459</div>
+                        <h4 class="product-name">Sunny Sofa</h4>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Modern Chair" class="product-image">
+                        <div class="product-price">$299</div>
+                        <h4 class="product-name">Nova Chair</h4>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Coffee Table" class="product-image">
+                        <div class="product-price">$219</div>
+                        <h4 class="product-name">Round Table</h4>
+                    </div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <button class="carousel-control prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-control next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h3 class="newsletter-subtitle">LIMITED DEALS</h3>
+                    <h2 class="newsletter-title">Become a member and get 10% off of your first purchase</h2>
+                    
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email here" class="newsletter-input">
+                        <button type="submit" class="newsletter-submit">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <div class="logo-icon"></div>
+                        <h2 class="logo-text">Dekoor</h2>
+                    </div>
+                    <p class="footer-description">
+                        Dekoor is a furniture company created to fulfill the needs of family 
+                        with aesthetic feeling in their furniture. Always pay attention to 
+                        details and give clear communication for the customers. Priority of 
+                        our design is comfortability.
+                    </p>
+                    <p class="footer-copyright">©Copyright 2022 Dekoor</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Support</h3>
+                        <ul class="footer-menu">
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Shipping & Returns</a></li>
+                            <li><a href="#">Care guide</a></li>
+                            <li><a href="#">Redeem warranty</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Social Media</h3>
+                        <ul class="footer-menu">
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">TikTok</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3 class="footer-heading">About Us</h3>
+                        <ul class="footer-menu">
+                            <li><a href="#">Our story</a></li>
+                            <li><a href="#">Designer</a></li>
+                            <li><a href="#">Craftmanship</a></li>
+                            <li><a href="#">Sustainability</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

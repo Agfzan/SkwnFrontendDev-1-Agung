@@ -1,0 +1,123 @@
+.categories {
+    padding: 80px 0;
+}
+
+.categories-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.categories-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: 1fr;
+    gap: 15px;
+    flex: 1;
+    max-width: 550px;
+}
+
+.category-image-large {
+    grid-column: 3;
+    height: 100%;
+}
+
+.category-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.category-image:hover {
+    transform: scale(1.02);
+}
+
+.categories-content {
+    flex: 1;
+    max-width: 520px;
+}
+
+.section-label {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.categories-title {
+    font-size: 48px;
+    font-weight: 800;
+    color: #2f241f;
+    line-height: 1.2;
+    margin-bottom: 40px;
+}
+
+.category-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.category-tab {
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-tab:hover {
+    background-color: #f5f5f5;
+}
+
+.category-tab.active {
+    background-color: #e5f0b6;
+    color: #2f241f;
+}
+
+.category-description {
+    margin-top: 10px;
+    line-height: 1.5;
+    color: #444;
+    font-size: 16px;
+}
+
+@media (max-width: 992px) {
+    .categories-container {
+        flex-direction: column;
+    }
+
+    .categories-images {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .categories-content {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .categories-images {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .categories-images {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+    }
+
+    .category-image-large {
+        grid-column: 1;
+    }
+
+    .categories-title {
+        font-size: 36px;
+    }
+} 
